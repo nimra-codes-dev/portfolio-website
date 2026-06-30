@@ -2,19 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
+/* SMOOTH SCROLL */
 
 html {
   scroll-behavior: smooth;
 }
 
 section {
-  padding-top: 4rem;
-  /* header height */
-  scroll-margin-top: 5rem;
-  /* navbar offset */
+  scroll-margin-top: 80px;
 }
 
+/* WEBSITE BACKGROUND */
+
 html,
-body {
-  background-color: #000;
+body,
+#root {
+  background-color: #fadadd;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
+
+/* FLOATING ANIMATION */
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float-animation {
+  animation: floating 4s ease-in-out infinite;
+}
+
+.delay-1 {
+  animation-delay: 0s;
+}
+
+.delay-2 {
+  animation-delay: 1s;
+}
+
+.delay-3 {
+  animation-delay: 2s;
+}
+
+.delay-4 {
+  animation-delay: 3s;
+}
+
+
+

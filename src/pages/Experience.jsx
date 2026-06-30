@@ -1,116 +1,175 @@
 import React from "react";
 
-export default function Experience() {
+export default function Experience({ darkMode }) {
   return (
     <section
       id="experience"
-      className="relative min-h-screen bg-black text-white px-6 md:px-20 py-24 overflow-hidden pt-16 scroll-mt-20"
+      className={`min-h-screen px-6 md:px-20 py-24 pt-16 transition-all duration-500 overflow-hidden ${
+        darkMode
+          ? "bg-black text-white"
+          : "bg-[#FADADD] text-[#3B1F1B]"
+      }`}
     >
-      {/* Background Glow */}
-      <div className="absolute -top-40 -left-40 w-96 h-96 bg-purple-600/20 blur-[120px] rounded-full"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-800/20 blur-[140px] rounded-full"></div>
+      {/* HEADING */}
 
-      {/* Heading */}
-      <div className="relative z-10 mb-20">
-        <p className="text-purple-400 uppercase tracking-widest text-sm">
+      <div className="mb-20">
+        <p className="uppercase tracking-[6px] text-[#B66E79] text-sm">
           My Journey
         </p>
-        <h2 className="text-4xl md:text-5xl font-bold mt-2">
-          Experience & <span className="text-purple-500">Growth</span>
+
+        <h2 className="text-4xl md:text-5xl font-bold mt-4">
+          Experience &{" "}
+          <span className="text-[#B66E79]">
+            Growth
+          </span>
         </h2>
-        <p className="text-gray-400 mt-4 max-w-2xl">
-          I may be at the start of my career, but every step I take is focused on
-          learning, building, and improving as a Frontend Developer.
+
+        <p
+          className={`mt-5 max-w-2xl leading-8 ${
+            darkMode ? "text-gray-300" : "text-[#5A3A35]"
+          }`}
+        >
+          Although I am currently at the beginning of my professional journey,
+          I continuously work on improving my frontend development skills
+          through learning, practice, and real-world projects.
         </p>
       </div>
 
-      {/* Timeline */}
-      <div className="relative z-10 max-w-4xl mx-auto">
-        {/* Line */}
-        <div className="absolute left-4 md:left-1/2 top-0 h-full w-[2px] bg-purple-500/30"></div>
+      {/* TIMELINE */}
 
-        {/* Item 1 */}
-        <div className="relative flex gap-6 mb-16">
+      <div className="max-w-4xl mx-auto relative">
+
+        <div className="absolute left-4 top-0 h-full w-[2px] bg-[#B66E79] opacity-40"></div>
+
+        {/* CARD 1 */}
+
+        <div className="relative flex gap-6 mb-12">
           <div className="w-8 flex justify-center">
-            <span className="w-4 h-4 bg-purple-500 rounded-full mt-2"></span>
+            <span className="w-4 h-4 bg-[#B66E79] rounded-full mt-3"></span>
           </div>
 
-          <div className="bg-[#0f0f0f] border border-purple-500/30 rounded-xl p-6 md:p-8 hover:border-purple-500 transition hover:shadow-[0_0_25px_#a855f7]">
-            <h3 className="text-xl font-semibold">
-              Frontend Developer Intern
+          <div
+            className={`rounded-3xl p-8 border w-full transition duration-300 hover:-translate-y-2 ${
+              darkMode
+                ? "bg-[#111] border-[#8C4E4F]"
+                : "bg-white border-[#B66E79]"
+            }`}
+          >
+            <h3 className="text-2xl font-bold">
+              Frontend Developer Internship
             </h3>
-            <p className="text-purple-400 text-sm mt-1">
-              Internship · Learning Phase
+
+            <p className="text-[#B66E79] mt-2">
+              Seeking Internship Opportunities
             </p>
 
-            <p className="text-gray-400 mt-4 text-sm leading-relaxed">
-              Focused on mastering frontend fundamentals by building real UI
-              sections, understanding component-based architecture, and
-              practicing modern React workflows.
+            <p
+              className={`mt-5 leading-8 ${
+                darkMode ? "text-gray-300" : "text-[#5A3A35]"
+              }`}
+            >
+              Currently looking for an internship opportunity where I can apply
+              my frontend development knowledge, gain practical experience, and
+              contribute to real-world projects while learning from experienced
+              professionals.
             </p>
 
-            <div className="flex flex-wrap gap-3 mt-5 text-xs">
-              <span className="px-3 py-1 border border-purple-500/40 rounded-full">
+            <div className="flex flex-wrap gap-3 mt-6">
+              <span className="px-4 py-2 rounded-full border border-[#B66E79]">
                 React
               </span>
-              <span className="px-3 py-1 border border-purple-500/40 rounded-full">
+
+              <span className="px-4 py-2 rounded-full border border-[#B66E79]">
                 Tailwind CSS
               </span>
-              <span className="px-3 py-1 border border-purple-500/40 rounded-full">
+
+              <span className="px-4 py-2 rounded-full border border-[#B66E79]">
                 JavaScript
               </span>
             </div>
           </div>
         </div>
 
-        {/* Item 2 */}
-        <div className="relative flex gap-6 mb-16">
+        {/* CARD 2 */}
+
+        <div className="relative flex gap-6 mb-12">
           <div className="w-8 flex justify-center">
-            <span className="w-4 h-4 bg-purple-500 rounded-full mt-2"></span>
+            <span className="w-4 h-4 bg-[#B66E79] rounded-full mt-3"></span>
           </div>
 
-          <div className="bg-[#0f0f0f] border border-purple-500/30 rounded-xl p-6 md:p-8 hover:border-purple-500 transition hover:shadow-[0_0_25px_#a855f7]">
-            <h3 className="text-xl font-semibold">
-              Practice & Personal Projects
+          <div
+            className={`rounded-3xl p-8 border w-full transition duration-300 hover:-translate-y-2 ${
+              darkMode
+                ? "bg-[#111] border-[#8C4E4F]"
+                : "bg-white border-[#B66E79]"
+            }`}
+          >
+            <h3 className="text-2xl font-bold">
+              Self Learning & Practice
             </h3>
-            <p className="text-purple-400 text-sm mt-1">
-              Self Learning · Portfolio Work
+
+            <p className="text-[#B66E79] mt-2">
+              Portfolio & UI Development
             </p>
 
-            <p className="text-gray-400 mt-4 text-sm leading-relaxed">
-              Built multiple UI sections and layouts to improve visual design,
-              responsiveness, and clean code structure. Learned through
-              continuous practice and experimentation.
+            <p
+              className={`mt-5 leading-8 ${
+                darkMode ? "text-gray-300" : "text-[#5A3A35]"
+              }`}
+            >
+              Developed responsive web interfaces and portfolio sections to
+              strengthen my understanding of component-based development,
+              modern UI design principles, and clean coding practices.
             </p>
 
-            <ul className="mt-4 text-gray-400 text-sm space-y-2">
-              <li>• Portfolio website sections</li>
-              <li>• Responsive layouts</li>
-              <li>• Component reuse & styling</li>
+            <ul
+              className={`mt-5 space-y-2 ${
+                darkMode ? "text-gray-300" : "text-[#5A3A35]"
+              }`}
+            >
+              <li>• Responsive website layouts</li>
+              <li>• React component development</li>
+              <li>• Tailwind CSS styling</li>
+              <li>• UI/UX practice projects</li>
             </ul>
           </div>
         </div>
 
-        {/* Item 3 */}
+        {/* CARD 3 */}
+
         <div className="relative flex gap-6">
           <div className="w-8 flex justify-center">
-            <span className="w-4 h-4 bg-purple-500 rounded-full mt-2"></span>
+            <span className="w-4 h-4 bg-[#B66E79] rounded-full mt-3"></span>
           </div>
 
-          <div className="bg-[#0f0f0f] border border-purple-500/30 rounded-xl p-6 md:p-8 hover:border-purple-500 transition hover:shadow-[0_0_25px_#a855f7]">
-            <h3 className="text-xl font-semibold">
-              Continuous Learning
+          <div
+            className={`rounded-3xl p-8 border w-full transition duration-300 hover:-translate-y-2 ${
+              darkMode
+                ? "bg-[#111] border-[#8C4E4F]"
+                : "bg-white border-[#B66E79]"
+            }`}
+          >
+            <h3 className="text-2xl font-bold">
+              Continuous Professional Growth
             </h3>
-            <p className="text-purple-400 text-sm mt-1">
-              Present · Growing Everyday
+
+            <p className="text-[#B66E79] mt-2">
+              Present • Learning Everyday
             </p>
 
-            <p className="text-gray-400 mt-4 text-sm leading-relaxed">
-              Currently focused on strengthening React concepts, improving UI/UX
-              sense, and preparing myself for a junior frontend developer role.
+            <p
+              className={`mt-5 leading-8 ${
+                darkMode ? "text-gray-300" : "text-[#5A3A35]"
+              }`}
+            >
+              I am continuously improving my skills in React, modern frontend
+              technologies, responsive design, and professional development
+              practices to prepare myself for a successful career as a Frontend
+              Developer.
             </p>
           </div>
         </div>
+
       </div>
     </section>
   );
@@ -132,35 +191,3 @@ export default function Experience() {
 
 
 
-// export default function Experience() {
-//   return <h2>Experience Page</h2>;
-// }
-// export default function Experience() {
-//   return (
-//     <div className="min-h-screen bg-black text-white p-10">
-//       <h1 className="text-4xl font-bold text-purple-400 mb-8">Experience</h1>
-
-//       <div className="grid gap-6 max-w-3xl">
-//         {/* Card 1 */}
-//         <div className="bg-gray-900 p-6 rounded-2xl shadow-xl border border-gray-700">
-//           <h2 className="text-2xl font-semibold text-purple-300">Frontend Developer Intern</h2>
-//           <p className="text-sm text-gray-400 mt-1">(Future Internship)</p>
-//           <p className="text-gray-300 mt-3">
-//             Seeking internship opportunities to build real‑world experience in frontend
-//             development using React.js, TailwindCSS, JavaScript, and responsive UI design.
-//           </p>
-//         </div>
-
-//         {/* Card 2 */}
-//         <div className="bg-gray-900 p-6 rounded-2xl shadow-xl border border-gray-700">
-//           <h2 className="text-2xl font-semibold text-purple-300">Personal Projects</h2>
-//           <p className="text-gray-300 mt-3">
-//             Developed multiple portfolio projects including UI components, landing pages,
-//             and responsive layouts. Gaining experience in styling, animations, state
-//             management, and clean code architecture.
-//           </p>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }

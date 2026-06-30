@@ -1,68 +1,131 @@
 import { useState } from "react";
+import { FaMoon, FaSun } from "react-icons/fa";
 
-function Header() {
+function Header({ darkMode, setDarkMode }) {
   const [open, setOpen] = useState(false);
 
+  const toggleTheme = () => {
+    setDarkMode(!darkMode);
+  };
+
+  const navItems = [
+    "Home",
+    "About",
+    "Projects",
+    "Education",
+    "Experience",
+    "Skills",
+    "Contact",
+  ];
+
   return (
-    <header className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md shadow-md shadow-black/40">
-      <div className="max-w-7xl mx-auto px-4 h-14 flex justify-between items-center">
-
+    <header
+      className={`fixed top-0 left-0 w-full z-50 backdrop-blur-md border-b transition-all duration-500 ${
+        darkMode
+          ? "bg-black/90 border-[#8C4E4F]"
+          : "bg-[#FADADD]/90 border-[#B66E79]"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        
         {/* LOGO */}
-        <div className="flex items-center gap-2 min-w-0">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-700 to-purple-900 flex items-center justify-center text-sm font-bold text-white shrink-0">
-             NK
-           </div>
+        <div className="flex items-center gap-4">
+          <div
+            className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-lg ${
+              darkMode
+                ? "bg-[#8C4E4F] text-white"
+                : "bg-[#B66E79] text-white"
+            }`}
+          >
+            NK
+          </div>
 
-           <span className="hidden sm:block text-white font-semibold tracking-wide">
-             NimraKashif
-           </span>
-
+          <h1
+            className={`text-2xl font-serif ${
+              darkMode ? "text-white" : "text-[#3B1F1B]"
+            }`}
+          >
+            Nimra
+          </h1>
         </div>
 
         {/* DESKTOP NAV */}
-        <nav className="hidden md:flex gap-8 text-sm font-medium">
-          {["Home", "About", "Projects", "Education", "Experience", "Skills", "Contact"].map(
-            (item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="relative text-gray-300 hover:text-white transition group"
-              >
-                {item}
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            )
-          )}
+        <nav className="hidden md:flex items-center gap-8">
+          {navItems.map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              className={`relative transition duration-300 font-medium ${
+                darkMode
+                  ? "text-gray-300 hover:text-[#B66E79]"
+                  : "text-[#3B1F1B] hover:text-[#8C4E4F]"
+              }`}
+            >
+              {item}
+
+              <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-[#B66E79] transition-all duration-300 hover:w-full"></span>
+            </a>
+          ))}
         </nav>
 
-        {/* MOBILE BUTTON */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden text-white text-2xl"
-        >
-          {open ? "✕" : "☰"}
-        </button>
+        {/* RIGHT SIDE */}
+        <div className="flex items-center gap-4">
+          
+          {/* DAY / NIGHT BUTTON */}
+          <button
+            onClick={toggleTheme}
+            className={`w-16 h-8 rounded-full p-1 flex items-center transition-all duration-300 ${
+              darkMode
+                ? "bg-[#8C4E4F] justify-end"
+                : "bg-[#B66E79] justify-start"
+            }`}
+          >
+            <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center">
+              {darkMode ? (
+                <FaMoon className="text-black text-sm" />
+              ) : (
+                <FaSun className="text-yellow-500 text-sm" />
+              )}
+            </div>
+          </button>
+
+          {/* MOBILE MENU BUTTON */}
+          <button
+            onClick={() => setOpen(!open)}
+            className={`md:hidden text-2xl ${
+              darkMode ? "text-white" : "text-[#3B1F1B]"
+            }`}
+          >
+            {open ? "✕" : "☰"}
+          </button>
+        </div>
       </div>
 
       {/* MOBILE MENU */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-500 ${
-          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          open ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <nav className="flex flex-col bg-black px-6 py-4 gap-4 text-sm">
-          {["Home", "About", "Projects", "Education", "Experience", "Skills", "Contact"].map(
-            (item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                onClick={() => setOpen(false)}
-                className="text-gray-300 hover:text-white transition hover:translate-x-2"
-              >
-                {item}
-              </a>
-            )
-          )}
+        <nav
+          className={`flex flex-col gap-5 px-6 py-6 ${
+            darkMode ? "bg-black" : "bg-[#FADADD]"
+          }`}
+        >
+          {navItems.map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              onClick={() => setOpen(false)}
+              className={`transition ${
+                darkMode
+                  ? "text-gray-300 hover:text-[#B66E79]"
+                  : "text-[#3B1F1B] hover:text-[#8C4E4F]"
+              }`}
+            >
+              {item}
+            </a>
+          ))}
         </nav>
       </div>
     </header>

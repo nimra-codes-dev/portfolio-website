@@ -1,46 +1,69 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaHeart } from "react-icons/fa";
 
-function Footer() {
+function Footer({ darkMode }) {
   return (
-    <footer className="bg-black text-gray-400 py-10">
-      <div className="max-w-7xl mx-auto px-4 text-center">
+    <footer
+      className={`py-12 transition-all duration-500 ${
+        darkMode
+          ? "bg-black text-gray-300"
+          : "bg-[#FADADD] text-[#3B1F1B]"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 text-center">
 
         {/* Divider */}
-        <div className="h-px w-full bg-gradient-to-r from-transparent via-purple-500 to-transparent mb-6" />
+
+        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-[#B66E79] to-transparent mb-8"></div>
+
+        
 
         {/* Social Icons */}
-        <div className="flex justify-center gap-6 mb-4">
-          
+
+        <div className="flex justify-center gap-8 mb-8">
+
           {/* GitHub */}
+
           <a
-            href="https://github.com/nimrakashif337-dev"
+            href="https://github.com/nimra-codes-dev"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white transition transform hover:scale-110"
+            className="w-12 h-12 rounded-full border border-[#B66E79] flex items-center justify-center hover:bg-[#B66E79] hover:text-white transition duration-300"
           >
-            <FaGithub size={22} />
+            <FaGithub size={20} />
           </a>
 
           {/* LinkedIn */}
+
           <a
             href="https://www.linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white transition transform hover:scale-110"
+            className="w-12 h-12 rounded-full border border-[#B66E79] flex items-center justify-center hover:bg-[#B66E79] hover:text-white transition duration-300"
           >
-            <FaLinkedin size={22} />
+            <FaLinkedin size={20} />
           </a>
 
         </div>
 
         {/* Copyright */}
-        <p className="text-sm">
-          © {new Date().getFullYear()} Nimra Kashif. All rights reserved.
+
+        <p
+          className={`text-sm ${
+            darkMode ? "text-gray-400" : "text-[#5A3A35]"
+          }`}
+        >
+          © {new Date().getFullYear()} Nimra Kashif. All Rights Reserved.
         </p>
 
-        <p className="text-xs mt-1 text-gray-500">
+        <p
+          className={`text-sm mt-2 flex justify-center items-center gap-2 ${
+            darkMode ? "text-gray-500" : "text-[#7A4E55]"
+          }`}
+        >
           Built with React & Tailwind CSS
+          <FaHeart className="text-[#B66E79]" />
         </p>
+
       </div>
     </footer>
   );
@@ -55,92 +78,3 @@ export default Footer;
 
 
 
-
-// import { FaGithub, FaLinkedinIn, FaHeart } from "react-icons/fa";
-
-
-// function Footer() {
-//   return (
-
-    
-
-//     <footer className="bg-[#0b0b0b] border-t border-purple-500/20 py-10 mt-20">
-//       <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-
-//         {/* Left Text */}
-//         <div>
-//           <p className="text-gray-400 text-sm">
-//             © {new Date().getFullYear()} MyPortfolio. All rights reserved.
-//           </p>
-
-//           <p className="mt-2 text-gray-500 text-xs flex items-center justify-center md:justify-start gap-1">
-//             Designed with <FaHeart className="text-purple-500" /> using React & Tailwind CSS
-//           </p>
-
-//           <p className="mt-1 text-gray-500 text-xs">
-//             nimrakashif337@gmail.com
-//           </p>
-//         </div>
-
-//         {/* Social Icons */}
-//         <div className="flex gap-5 text-xl">
-//           <a
-//             href="https://github.com/nimrakashif337-dev"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//             className="text-gray-400 hover:text-purple-500 transition"
-//           >
-//             <FaGithub />
-//           </a>
-
-//           <a
-//             href="https://www.linkedin.com/in/nimrakashif337-dev/"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//             className="text-gray-400 hover:text-purple-500 transition"
-//           >
-//             <FaLinkedinIn />
-//           </a>
-//         </div>
-//       </div>
-//     </footer>
-//   );
-// }
-
-// export default Footer;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function Footer() {
-//   return (
-//     <footer className="bg-purple-900 text-gray-300 py-6">
-//       <div className="max-w-7xl mx-auto px-4 text-center">
-//         <p className="text-sm">
-//           © {new Date().getFullYear()} MyPortfolio. All rights reserved🖇️.
-//         </p>
-//         <p className="mt-1 text-white text-xs">
-//           {/* Designed with ❤️ using React & Tailwind CSS */}
-//           @nimrakashif337@gmail.com 📞
-//         </p>
-//       </div>
-//     </footer>
-//   );
-// }
-
-// export default Footer;

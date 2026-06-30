@@ -1,101 +1,129 @@
-export default function Contact() {
+import { FaWhatsapp, FaEnvelope } from "react-icons/fa";
+
+export default function Contact({ darkMode }) {
   return (
     <section
       id="contact"
-      className="min-h-screen bg-[#0b0b0b] text-white px-6 py-24 pt-16 scroll-mt-20"
+      className={`min-h-screen px-6 py-24 pt-16 transition-all duration-500 ${
+        darkMode
+          ? "bg-black text-white"
+          : "bg-[#FADADD] text-[#3B1F1B]"
+      }`}
     >
       <div className="max-w-6xl mx-auto">
 
-        {/* Heading */}
-        <div className="mb-16 text-center">
-          <p className="text-sm tracking-[0.3em] text-purple-400 uppercase mb-3">
-            Contact
+        {/* HEADING */}
+
+        <div className="text-center mb-20">
+
+          <p className="text-sm tracking-[0.3em] text-[#B66E79] uppercase mb-4">
+            Contact Me
           </p>
-          <h2 className="text-4xl md:text-5xl font-semibold">
-            Let’s <span className="text-purple-500">Connect</span>
+
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Let's <span className="text-[#B66E79]">Connect</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto mt-5 text-lg">
-            Have a project idea, internship opportunity, or just want to say hi?
-            Feel free to reach out.
+
+          <p
+            className={`max-w-3xl mx-auto text-lg leading-9 ${
+              darkMode ? "text-gray-300" : "text-[#5A3A35]"
+            }`}
+          >
+            I am currently seeking frontend internship opportunities where I
+            can apply my technical skills, gain practical industry experience,
+            and continue growing as a developer. I am passionate about creating
+            responsive and user-friendly web applications and always eager to
+            learn from experienced professionals.
+
+            <br />
+            <br />
+
+            If you have an internship opportunity, project collaboration, or
+            simply want to connect, feel free to reach out through email or
+            WhatsApp. I would love to hear from you.
           </p>
+
         </div>
 
-        {/* Content */}
-        <div className="grid md:grid-cols-2 gap-14">
+        {/* CONTACT CARDS */}
 
-          {/* Contact Info */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-semibold">
-              Get in Touch
+        <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+
+          {/* EMAIL CARD */}
+
+          <a
+            href="mailto:nimrakashifdev@gmail.com"
+            className={`p-10 rounded-[30px] border transition-all duration-300 hover:-translate-y-3 ${
+              darkMode
+                ? "bg-[#111] border-[#8C4E4F]"
+                : "bg-white border-[#B66E79]"
+            }`}
+          >
+            <FaEnvelope
+              size={45}
+              className="text-[#B66E79] mb-6"
+            />
+
+            <h3 className="text-3xl font-bold mb-4">
+              Email Me
             </h3>
 
-            <p className="text-gray-400 leading-relaxed">
-              I’m open to frontend internships, learning opportunities, and
-              collaborations. I usually respond within 24 hours.
+            <p
+              className={`leading-8 ${
+                darkMode ? "text-gray-300" : "text-[#5A3A35]"
+              }`}
+            >
+              Feel free to send me an email regarding internship opportunities,
+              collaborations, frontend development discussions, or any
+              professional inquiries. I usually respond as quickly as possible.
             </p>
 
-            <div className="space-y-4 text-gray-300">
-              <p>
-                <span className="text-purple-400 font-medium">Email:</span><br />
-                nimrakashif337@gmail.com
-              </p>
+            <p className="mt-6 text-[#B66E79] font-semibold text-lg">
+              nimrakashifdev@gmail.com
+            </p>
 
-              <p>
-                <span className="text-purple-400 font-medium">Location:</span><br />
-                Okara, Pakistan
-              </p>
+          </a>
 
-              <p>
-                <span className="text-purple-400 font-medium">GitHub:</span><br />
-                github.com/nimrakashif337-dev
-              </p>
-            </div>
-          </div>
+          {/* WHATSAPP CARD */}
 
-          {/* Contact Form */}
-          <form
-            className="bg-[#111] border border-purple-500/20 rounded-xl p-8 space-y-6"
+          <a
+            href="https://wa.me/923410431839"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`p-10 rounded-[30px] border transition-all duration-300 hover:-translate-y-3 ${
+              darkMode
+                ? "bg-[#111] border-[#8C4E4F]"
+                : "bg-white border-[#B66E79]"
+            }`}
           >
-            <div>
-              <label className="text-sm text-gray-400">Your Name</label>
-              <input
-                type="text"
-                placeholder="Enter your name"
-                className="w-full mt-2 px-4 py-3 bg-transparent border border-gray-700 rounded-md
-                focus:outline-none focus:border-purple-500"
-              />
-            </div>
+            <FaWhatsapp
+              size={45}
+              className="text-green-500 mb-6"
+            />
 
-            <div>
-              <label className="text-sm text-gray-400">Your Email</label>
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full mt-2 px-4 py-3 bg-transparent border border-gray-700 rounded-md
-                focus:outline-none focus:border-purple-500"
-              />
-            </div>
+            <h3 className="text-3xl font-bold mb-4">
+              WhatsApp
+            </h3>
 
-            <div>
-              <label className="text-sm text-gray-400">Message</label>
-              <textarea
-                rows="5"
-                placeholder="Write your message..."
-                className="w-full mt-2 px-4 py-3 bg-transparent border border-gray-700 rounded-md
-                focus:outline-none focus:border-purple-500 resize-none"
-              ></textarea>
-            </div>
-
-            <button
-              type="button"
-              className="px-6 py-3 border border-purple-500 text-purple-400 rounded-md
-              hover:bg-purple-600 hover:text-black transition"
+            <p
+              className={`leading-8 ${
+                darkMode ? "text-gray-300" : "text-[#5A3A35]"
+              }`}
             >
-              Send Message
-            </button>
-          </form>
+              You can also contact me directly on WhatsApp for quick
+              communication regarding internships, project discussions, or
+              professional networking opportunities. I am always happy to
+              connect and learn from new experiences.
+            </p>
+
+            <p className="mt-6 text-[#B66E79] font-semibold text-lg">
+              +92 341 0431839
+            </p>
+
+          </a>
 
         </div>
+
       </div>
     </section>
   );

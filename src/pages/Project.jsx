@@ -1,83 +1,106 @@
 import React from "react";
 
-export default function Projects() {
-  const projects = [
-    {
-      title: "Personal Portfolio Website",
-      description:
-        "A responsive personal portfolio built using React and Tailwind CSS to showcase skills, education and projects.",
-      tech: ["React", "Tailwind", "Vite"],
-      link: "#",
-    },
-    {
-      title: "Practice React Components",
-      description:
-        "Hands-on practice projects focusing on React components, props, state and basic hooks.",
-      tech: ["React", "JavaScript"],
-      link: "#",
-    },
-    {
-      title: "Frontend UI Practice",
-      description:
-        "Multiple UI sections and layouts created for practice using HTML, CSS and Tailwind.",
-      tech: ["HTML", "CSS", "Tailwind"],
-      link: "#",
-    },
-  ];
-
+export default function Projects({ darkMode }) {
   return (
     <section
       id="projects"
-      className="min-h-screen bg-black text-white px-6 md:px-20 py-20 pt-16 scroll-mt-20"
+      className={`min-h-screen px-6 md:px-20 py-24 transition-all duration-500 ${
+        darkMode
+          ? "bg-black text-white"
+          : "bg-[#FADADD] text-[#3B1F1B]"
+      }`}
     >
-      {/* Heading */}
-      <div className="mb-12">
-        <h2 className="text-4xl md:text-5xl font-bold">
-          My <span className="text-purple-500">Projects</span>
+      {/* HEADING */}
+
+      <div className="mb-16 text-center">
+        <p className="uppercase tracking-[8px] text-[#B66E79] text-sm mb-4">
+          My Work
+        </p>
+
+        <h2 className="text-5xl font-bold">
+          My <span className="text-[#B66E79]">Projects</span>
         </h2>
-        <p className="text-gray-400 mt-3 max-w-xl">
-          Here are some of my practice and personal projects that reflect my
-          frontend learning journey.
+
+        <p
+          className={`mt-5 max-w-2xl mx-auto text-lg ${
+            darkMode ? "text-gray-300" : "text-[#5C3A3A]"
+          }`}
+        >
+          Here is my personal portfolio project and my ongoing frontend
+          development journey.
         </p>
       </div>
 
-      {/* Projects Grid */}
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project, index) => (
-          <div
-            key={index}
-            className="border border-purple-500/30 rounded-xl p-6 hover:border-purple-500 transition duration-300 hover:shadow-[0_0_20px_#a855f7]"
-          >
-            <h3 className="text-xl font-semibold mb-3">
-              {project.title}
-            </h3>
+      <div className="grid lg:grid-cols-2 gap-10">
 
-            <p className="text-gray-400 text-sm mb-4">
-              {project.description}
-            </p>
+        {/* PORTFOLIO CARD */}
 
-            {/* Tech Stack */}
-            <div className="flex flex-wrap gap-2 mb-5">
-              {project.tech.map((item, i) => (
-                <span
-                  key={i}
-                  className="text-xs px-3 py-1 border border-purple-500 rounded-full text-purple-400"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
+        <div className="bg-gradient-to-br from-[#8C4E4F] to-[#3B1F1B] p-8 rounded-[30px] border border-[#B66E79] shadow-xl hover:-translate-y-2 duration-300">
 
-            {/* Button */}
-            <a
-              href={project.link}
-              target="_blank"
-              className="inline-block text-sm px-5 py-2 border border-purple-500 rounded-md hover:bg-purple-500 hover:text-black transition"
-            >
-              View Project
-            </a>
+          <h3 className="text-3xl font-bold text-[#FADADD] mb-5">
+            Personal Portfolio Website
+          </h3>
+
+          <p className="text-[#FADADD]/90 leading-8 mb-6">
+            A responsive personal portfolio built using React and Tailwind CSS
+            to showcase my skills, education, experience, and projects.
+          </p>
+
+          <div className="flex flex-wrap gap-3 mb-8">
+            <span className="px-4 py-2 rounded-full bg-black/30 text-[#FADADD]">
+              React
+            </span>
+
+            <span className="px-4 py-2 rounded-full bg-black/30 text-[#FADADD]">
+              Tailwind CSS
+            </span>
+
+            <span className="px-4 py-2 rounded-full bg-black/30 text-[#FADADD]">
+              Vite
+            </span>
           </div>
-        ))}
+
+          <button className="px-6 py-3 rounded-xl bg-[#B66E79] text-white hover:bg-[#FADADD] hover:text-[#3B1F1B] duration-300">
+            View Project
+          </button>
+
+        </div>
+
+        {/* INTERNSHIP MESSAGE */}
+
+        <div
+          className={`p-10 rounded-[30px] border border-[#B66E79] flex flex-col justify-center ${
+            darkMode
+              ? "bg-[#111]"
+              : "bg-white/40 backdrop-blur-md"
+          }`}
+        >
+          <h3 className="text-3xl font-bold text-[#B66E79] mb-6">
+            Learning & Growing 🚀
+          </h3>
+
+          <p
+            className={`text-lg leading-9 ${
+              darkMode ? "text-gray-300" : "text-[#5C3A3A]"
+            }`}
+          >
+            I am currently focusing on improving my frontend development skills
+            and actively looking for internship opportunities to gain practical
+            industry experience.
+          </p>
+
+          <p
+            className={`mt-6 text-lg leading-9 ${
+              darkMode ? "text-gray-300" : "text-[#5C3A3A]"
+            }`}
+          >
+            At this stage, I have completed my personal portfolio project and
+            continue building smaller practice projects while learning modern
+            technologies like React, Tailwind CSS, and JavaScript.
+          </p>
+
+        </div>
+
       </div>
     </section>
   );

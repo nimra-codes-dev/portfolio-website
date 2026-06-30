@@ -1,5 +1,8 @@
+import { useState } from "react";
+
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Project";
@@ -9,46 +12,49 @@ import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(true);
+
   return (
     <>
-      <Header />
+      <Header
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
+      />
 
       <section id="home">
-        <Home />
+        <Home darkMode={darkMode} />
       </section>
 
       <section id="about">
-        <About />
+        <About darkMode={darkMode} />
       </section>
 
       <section id="project">
-        <Projects />
+        <Projects darkMode={darkMode} />
       </section>
 
       <section id="education">
-        <Education />
+        <Education darkMode={darkMode} />
       </section>
 
       <section id="experience">
-        <Experience />
+        <Experience darkMode={darkMode} />
       </section>
 
       <section id="skills">
-        <Skills />
+        <Skills darkMode={darkMode} />
       </section>
 
       <section id="contact">
-        <Contact />
+        <Contact darkMode={darkMode} />
       </section>
 
-      {/* ✅ FOOTER YAHAN HOGA */}
-      <Footer />
+      <Footer darkMode={darkMode} />
     </>
   );
 }
 
 export default App;
-
 
 
 
